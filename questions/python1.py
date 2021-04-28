@@ -65,13 +65,14 @@ def one(input1, input2):
     # No hints for this question
 
 def two(arg1):
-    if arg1 % 3 ==0:
-        return ("fizz")
-    elif arg1 % 5 == 0:
+ 
+    if arg1 % 5 == 0:
         return ("buzz")
+    elif arg1 % 3 == 0:
+        return ("fizz")
     elif arg1 % 5 == 0 and arg1 % 3 == 0:
         return ("fizzbuzz")
-    elif arg1 % 5 !=0 and arg1 % 3 !=0:
+    else:
         return ("null")
 
 
@@ -92,9 +93,12 @@ def two(arg1):
     # <HINTS>
 
     # How do we ignore case in a String? help(str) may offer some insight.
-count = 0
-def three(input):
 
+def three(input):
+    count = 0
+    for i in (input.lower()):
+        if (i=='a' or i =='e' or i == 'i' or i == 'o' or i == 'u'):
+            count = count +1
     return count
     
 
@@ -119,7 +123,17 @@ def three(input):
 
 
 def four(input):
-    return False
+    if "cie" in input:
+        return False
+    elif "cei" in input:
+        return True
+    elif "ei" in input:
+        return False
+    elif "ie" in input:
+        return True
+    else:
+        return True
+    
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -139,7 +153,6 @@ def four(input):
     # You may need to create a list of numbers from 0 to i, take a look at help(range).
 
 def five(input):
-
 
     if input < 0:
            return 0
@@ -193,6 +206,9 @@ def six(string, int, char):
     # Take a look at the documentation for Strings, List and range.
 
 def seven(inputString, char):
+    start = inputString.find(char)
+    while start >= 0:
+        start = inputString.find(char, start+len(char))
     return -1
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
