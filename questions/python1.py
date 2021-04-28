@@ -153,14 +153,13 @@ def four(input):
     # You may need to create a list of numbers from 0 to i, take a look at help(range).
 
 def five(input):
-
+    factorial = 1
     if input < 0:
            return 0
     elif input == 0:
            return 1
     else:
            for i in range(1,input + 1):
-               factorial = 1
                factorial = factorial*i
            return factorial
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
@@ -183,7 +182,14 @@ def five(input):
     # How do we find the length of a container, take a look at help(len), you will also need to look at help(str) for String manipulation.
  
 def six(string, int, char):
-    return False
+    occur = 0 
+    for i in range(len(string)):
+        if (string[i] == char):
+            occur +=1
+        if (occur == int):
+            return True
+        else:
+            return False
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
